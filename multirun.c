@@ -222,7 +222,7 @@ void sub_exec(const char* command) {
 
 void kill_all(int signal) {
     for (int i = 0; i < nbr_processes; i++) {
-        int ret = kill(-subprocesses[i].pid, signal);
+        int ret = kill(subprocesses[i].pid, signal);
         if (ret != 0) {
             if (errno == ESRCH) {
                 // ignore
